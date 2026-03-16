@@ -25,13 +25,18 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
+- [ ] The games purpose is to guess a number between three difficulties: easy, normal, and hard. Depending on which difficulty, the user can get points on how close they are to the number. Each incorrect guess the player loses points. The player can start new games afterward and receive hints during the game. 
+- [ ] I found two bugs: 
+   - The first bug was that the settings for the game did not display the correct values. Easy/Normal/Hard were something like 1-20, 1-100, 1-50, where it should be 1-20, 1-50, 1-100. 
+   - The second bug was that the score for the player went below 0. This shouldn't be possible in a game like this. If the player gets a score that drops the score below 0, it should reset back to 0. 
 - [ ] Explain what fixes you applied.
+   - Using Claude Code, I had claude go through and first understand the code files using the "@" symbol. Once it understood the context, I told it what exactly was going wrong with the file. It gave me the following suggestions for the code changes:
+      - Change 'low' string to `low` variable and 'high' string to `high` variable instead of hardcoding. This wasn't the error specifically, but it was still an error. I had to manually change the user settings as described in "I found two bugs".
+      - For the second bug, it actually corrected it and put "max(current_score - 5, 0) for both the "too high" and "too low" values. This was correct, it just should have combined both into one to make it more readable. 
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- ![alt text](image.png)
 
 ## 🚀 Stretch Features
 

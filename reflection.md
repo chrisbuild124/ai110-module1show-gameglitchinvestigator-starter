@@ -56,8 +56,11 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 4. What did you learn about Streamlit and state?
 
 - In your own words, explain why the secret number kept changing in the original app.
+  - The number kept changing in the original repo because the number was being modified in app.py each time a guess was called. Instead of hard coding something, now it is variable and will work correctly. 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+  - The Steamlit "reruns" means that whenever the user hits a button, the entire python file gets re-run. This removes items in memory unfortunately. It can be solved using a session state - a session state keeps the variables each time it re-runs so the game can keep data in between re-runs. 
 - What change did you make that finally gave the game a stable secret number?
+  - I made a few changes to get things to work, but the biggest one must have been that the secret was changing over time in "if st.session_state.attempts % 2 == 0:". Making sure it's always an int fixed most of the issues. 
 
 ---
 
@@ -65,5 +68,8 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+    - I'd probably not rely on Claude AI, or figure out a way to be very strategic. Claude AI seemed to not understand a lot of things and kept making errors. It did fix a bit but even some of the fixes proved to be redundant. 
 - What is one thing you would do differently next time you work with AI on a coding task?
+  - First, understand as much as possible. Getting enough background will help when the AI comes up with a solution. Also adding test cases is a great idea. 
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+  - I'm starting to think that AI generated code lacks background knowledge and needs more guidance (for now).

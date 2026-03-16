@@ -3,9 +3,9 @@ def get_range_for_difficulty(difficulty: str):
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":
-        return 1, 50  # FIX: corrected Normal range from 1-100 to 1-50 in logic_utils.py using Claude Code
+        return 1, 50  #FIX: corrected Normal range from 1-100 to 1-50 in logic_utils.py using Claude Code
     if difficulty == "Hard":
-        return 1, 100  # FIX: corrected Hard range from 1-50 to 1-100 in logic_utils.py using Claude Code
+        return 1, 100  #FIX: corrected Hard range from 1-50 to 1-100 in logic_utils.py using Claude Code
     return 1, 100
 
 
@@ -63,4 +63,4 @@ def update_score(current_score: int, outcome: str, attempt_number: int):
             points = 10
         return current_score + points
 
-    return max(0, current_score - 5)  # FIX: score floored at 0 to prevent negative values in logic_utils.py using Claude Code
+    return max(0, current_score - 5)  #FIX: score floored at 0 to prevent negative values in logic_utils.py using Claude Code
